@@ -12,92 +12,96 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
         body {
-            background: linear-gradient(180deg, #3aa0ff 0%, #1a73e8 28%, #f0f2f5 28%, #f0f2f5 100%);
-            color: #222;
+            background-color: #f0f2f5;
+            color: #333;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             padding: 20px 10px;
-            min-height: 100vh;
         }
-        .container {
+        .header {
+            background: linear-gradient(135deg, #0066ff, #3399ff);
             width: 100%;
-            max-width: 440px;
+            max-width: 480px;
+            padding: 25px 15px;
             text-align: center;
+            color: white;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
         }
-        .header-text {
-            color: #ffffff;
-            padding: 10px 0 25px 0;
-        }
-        .header-text h1 {
-            font-size: 21px;
+        .header h1 {
+            font-size: 20px;
             font-weight: 700;
             margin-bottom: 8px;
-            line-height: 1.25;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .header-text p {
+        .header p {
             font-size: 13px;
+            opacity: 0.9;
             line-height: 1.4;
-            opacity: 0.95;
-            padding: 0 10px;
         }
         .card {
-            background: #ffffff;
+            background: white;
+            width: 100%;
+            max-width: 480px;
+            padding: 24px 20px;
             border-radius: 16px;
-            padding: 24px 16px 20px 16px;
-            margin-bottom: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
         }
         .logo-img {
-            width: 90px;
-            height: 90px;
-            object-fit: contain;
-            border-radius: 50%;
+            max-width: 140px;
+            max-height: 140px;
+            width: auto;
+            height: auto;
+            object-linejoin: round;
             margin-bottom: 12px;
         }
-        .card h2 {
-            font-size: 20px;
-            font-weight: 600;
+        .brand-name {
+            font-size: 32px;
+            font-weight: 800;
             color: #111;
-            margin-bottom: 6px;
+            letter-spacing: 0.5px;
         }
-        .card .phone-sub {
-            font-size: 14px;
-            color: #555;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .links-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        .links-container {
+            width: 100%;
+            max-width: 480px;
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
-        .btn {
+        .link-btn {
+            background-color: #0066ff;
+            color: white;
+            padding: 16px 20px;
+            border-radius: 12px;
+            text-decoration: none;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            background-color: #1a82e2;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 14px 18px;
-            border-radius: 12px;
-            transition: background 0.2s;
-            text-align: left;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 102, 255, 0.15);
+            transition: background-color 0.2s, transform 0.1s;
         }
-        .btn:active {
-            background-color: #156cb8;
+        .link-btn:active {
+            transform: scale(0.98);
+            background-color: #0052cc;
         }
-        .btn-title {
+        .link-title {
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 2px;
         }
-        .btn-sub {
+        .link-subtitle {
             font-size: 13px;
             opacity: 0.85;
         }
@@ -105,50 +109,45 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="header-text">
+    <div class="header">
         <h1>Магазин мобильных аксессуаров и ремонта</h1>
         <p>Продажа аксессуаров и ремонт сотовых телефонов, планшетов, фотоаппаратов и ноутбуков</p>
     </div>
 
     <div class="card">
-        <img src="Logo.jpg" alt="A-Mobail Logo" class="logo-img">
-        <h2>A-Mobail</h2>
-        <a href="tel:+79277748793" class="phone-sub">8-927-774-87-93 Ярослав</a>
+        <div class="logo-container">
+            <img src="logo.png" alt="A-Mobail Logo" class="logo-img">
+            <div class="brand-name">A-Mobail</div>
+        </div>
     </div>
 
-    <div class="links-card">
-        <a href="https://vk.ru/amobail" class="btn" target="_blank">
-            <span class="btn-title">Группа ВК</span>
-            <span class="btn-sub">ВКонтакте</span>
+    <div class="links-container">
+        <!-- Новая кнопка вызова с номером и именем -->
+        <a href="tel:+79277748793" class="link-btn">
+            <span class="link-title">Позвонить</span>
+            <span class="link-subtitle">8-927-774-87-93 (Ярослав)</span>
         </a>
 
-        <a href="https://t.me/amobail_opt" class="btn" target="_blank">
-            <span class="btn-title">Техника Apple по оптовым ценам</span>
-            <span class="btn-sub">Telegram-канал</span>
+        <a href="https://vk.com/szr1988rf" class="link-btn" target="_blank">
+            <span class="link-title">Группа ВК</span>
+            <span class="link-subtitle">ВКонтакте</span>
         </a>
 
-        <a href="https://vk.ru/oxotnic" class="btn" target="_blank">
-            <span class="btn-title">VK</span>
-            <span class="btn-sub">ВКонтакте</span>
+        <a href="https://t.me/" class="link-btn" target="_blank">
+            <span class="link-title">Техника Apple по оптовым ценам</span>
+            <span class="link-subtitle">Telegram-канал</span>
         </a>
 
-        <a href="https://yandex.ru/maps/org/a_mobayl/39095237664/?ll=48.460736%2C53.149041&source=wizbiz_new_text_single&z=18" class="btn" target="_blank">
-            <span class="btn-title">Оставьте пожалуйста отзыв в Яндекс</span>
-            <span class="btn-sub">Яндекс</span>
+        <a href="https://vk.com/" class="link-btn" target="_blank">
+            <span class="link-title">VK</span>
+            <span class="link-subtitle">ВКонтакте</span>
         </a>
 
-        <a href="https://www.google.com/maps/place/A-mobail/@53.1490239,48.4606988,17z/data=!3m1!4b1!4m6!3m5!1s0x4169acce49316433:0x8047d789f7fddf37!8m2!3d53.1490239!4d48.4606988!16s%2Fg%2F11c5bqpt_q?entry=ttu" class="btn" target="_blank">
-            <span class="btn-title">Оставьте пожалуйста отзыв в Google</span>
-            <span class="btn-sub">Google</span>
-        </a>
-
-        <a href="https://2gis.ru/syzran/firm/70000001024169545?m=48.456859%2C53.140738%2F12.8" class="btn" target="_blank">
-            <span class="btn-title">Оставьте пожалуйста отзыв в 2GIS</span>
-            <span class="btn-sub">2GIS</span>
+        <a href="https://yandex.ru/maps" class="link-btn" target="_blank">
+            <span class="link-title">Оставьте пожалуйста отзыв в Яндекс</span>
+            <span class="link-subtitle">Яндекс</span>
         </a>
     </div>
-</div>
 
 </body>
 </html>
